@@ -1,9 +1,9 @@
 # M2.9 Security - ipset and AWS WAF creation
     Prerequisites:
-    1. Existing VPC
-    2. Existing ELB and EC2
+    1. Existing VPC, terraform apply VPC_Create
+    2. Existing ELB and EC2, terraform apply 2.9-tf-ec2-alb
 
-Provided codes to fetch public ip address, alb arn and creation of ipset and aws waf with rules to allow, block and monitor the HTTP requests.
+Provided codes perform the following actions, fetch public ip address, alb arn and creation of ipset and aws waf with rules to allow, block and monitor the HTTP requests. create acm cert for route 53 https.
 
 # What is ipset?
 In Amazon Web Services (AWS), an IP set is a collection of IP addresses and ranges that can be used in a rule statement. IP sets are used in AWS WAF to allow, block, or monitor web requests. 
