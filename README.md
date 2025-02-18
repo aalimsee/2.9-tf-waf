@@ -1,4 +1,9 @@
 # M2.9 Security - ipset and AWS WAF creation
+    Prerequisites:
+    1. Existing VPC
+    2. Existing ELB and EC2
+
+Provided codes to fetch public ip address, alb arn and creation of ipset and aws waf with rules to allow, block and monitor the HTTP requests.
 
 # What is ipset?
 In Amazon Web Services (AWS), an IP set is a collection of IP addresses and ranges that can be used in a rule statement. IP sets are used in AWS WAF to allow, block, or monitor web requests. 
@@ -46,4 +51,3 @@ In AWS, a WAF ACL (Web Access Control List) is used to filter incoming web traff
     Mitigating XSS attacks: Detect and block requests with malicious JavaScript code in input fields. 
     Geo-restriction: Limit access to your website based on user's geographic location. 
     Bot management: Identify and block automated bot traffic that could be harmful to your application. 
-    
