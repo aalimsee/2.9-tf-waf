@@ -4,7 +4,7 @@ resource "aws_wafv2_ip_set" "laptop_ip_set" {
   scope              = "REGIONAL" # Change to CLOUDFRONT if needed
   description        = "M2.9 Security by Terraform"
   ip_address_version = "IPV4"
-  addresses          = ["42.60.174.38/32"] # <<< curl ifconfig.me to get the public ip address of laptop
+  addresses          = ["${local.public_ip}/32"] # <<< curl ifconfig.me to get the public ip address of laptop
 
   tags = {
     Name = "aalimsee-tf-allow-LaptopIPSet"
@@ -54,7 +54,7 @@ resource "aws_wafv2_web_acl" "example_acl" {
         field_to_match {
           uri_path {}
         }
-        positional_constraint = "CONTAINS"
+        positional_constraint = "STARTS_WITH"
         search_string         = "/admin"
 
         text_transformation {
